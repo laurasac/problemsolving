@@ -56,11 +56,13 @@ if mode == 1:
 			direc += 1
 			if direc == 5:
 				direc = 1
+			all_pos.append(pos+[directions[direc-1]])
 
 		elif mov == 'A':
 			direc -= 1
 			if direc == 0:
 				direc = 4
+			all_pos.append(pos+[directions[direc-1]])
 
 		elif mov == 'F':
 			if direc == 1:
