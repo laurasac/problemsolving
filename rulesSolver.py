@@ -1,5 +1,3 @@
-# Fatto da Davide Barbini
-
 def add_rule(rule_index, out_var="", in_vars=[], rules={}):
     if out_var in in_vars:
         print("Invalid rule: output var is in input vars")
@@ -44,27 +42,26 @@ rules = {}
 
 # Utilizzo: add_rule(numero, variabile_da_ottenere, [variabile_conosciuta1, variabile_conosciuta2, etc...], dizionario_regole)
 
-
 #REGOLE
+print("controlla nel file rulesSolver.py dalla riga 50 in avanti che le regole siano inserite correttamente e che le richieste in fondo siano quelle giuste...")
+print()
+print("fare attenzione all'ordine delle lettere inserite nelle rules e nelle richieste!!!!")
 
-
-
-
-add_rule(1, 'a', ['b', 'c'], rules)
-add_rule(2, 'a', ['c', 'd'], rules)
-add_rule(3, 'a', ['b', 'c',"d"], rules)
-add_rule(4, 'f', ['b', 'a'], rules)
-
-
+add_rule(1, 'h', ['d', 'g'], rules)
+add_rule(2, 'i', ['f', 'h'], rules)
+add_rule(3, 'f', ['a', 'd'], rules)
+add_rule(4, 'a', ['b', 'c'], rules)
 
 # Utilizzo: find_all_paths(dizionario_regole, variabile_di_arrvio, [variabile_iniziale1, variabile_iniziale2])
 #paths = find_all_paths(rules, 'b', ['a', 'r', 'w'])
 
 #COSE DA CERCARE
+paths = find_all_paths(rules, 'i', ['b','c','d','g'])
 
-
-paths = find_all_paths(rules, 'f', ['b',"c"])
-
+print()
+print("CONTROLLA GUIDA SU COME INSERIRE RESULT")
 
 solutions = order_rules(paths)
 print(solutions)
+
+
