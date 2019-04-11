@@ -1,17 +1,22 @@
 import os
 
-os.system('cls')
-x = int(input('x iniziale: '))
-y = int(input('y iniziale: '))
-dir_iniz = input('direzione iniziale (N S W E): ').upper()
-pos = [x,y]
-pos_iniz = [x, y, dir_iniz]
-
 directions = ['N', 'E', 'S', 'W']
 arrows = ['^', '>', 'v', '<']
 
-print()
-print('comando per comando (1)')
+os.system('cls')
+print('ROBOT\n')
+x = int(input('x iniziale: '))
+y = int(input('y iniziale: '))
+
+while True:
+	dir_iniz = input('direzione iniziale (N S W E): ').upper()
+	if dir_iniz in directions:
+		break
+
+pos = [x,y]
+pos_iniz = [x, y, dir_iniz]
+
+print('\ncomando per comando (1)')
 print('lista di comandi es. F,A,F,O,F...(2)')
 mode = int(input())
 
@@ -43,13 +48,11 @@ if mode == 1:
 		mov = input('O A F QUIT: ').upper()
 
 		if mov == "QUIT":
-			print()
-			print('SENZA POSIZIONE INIZIALE')
+			print('\nSENZA POSIZIONE INIZIALE')
 			print(all_pos)
-			print()
-			print('CON POSIZIONE INIZIALE')
+			print('\nCON POSIZIONE INIZIALE')
 			print([pos_iniz]+all_pos)
-			input()
+			print()
 			break
 
 		if mov == 'O':
@@ -136,9 +139,7 @@ if mode == 2:
 				pos = [x,y]
 				all_pos.append(pos+[directions[direc-1]])
 
-	print()
-	print('SENZA POSIZIONE INIZIALE')
+	print('\nSENZA POSIZIONE INIZIALE')
 	print(all_pos)
-	print()
-	print('CON POSIZIONE INIZIALE')
+	print('\nCON POSIZIONE INIZIALE')
 	print([pos_iniz]+all_pos)
